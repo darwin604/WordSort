@@ -12,18 +12,18 @@ public class Parser {
 
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line;
-        StringBuilder allTheWords = new StringBuilder();
+        StringBuilder allTheWords = new StringBuilder(); // Big string to store all the raw input
 
-        // Populate the grid list with grids from the sample file
         while ((line = reader.readLine()) != null) {
 
-            allTheWords.append(line + " "); // Append a space to each line to prevent concatenated words
+            allTheWords.append(line).append(" "); // Append a space to each line to prevent concatenated words
         }
 
         reader.close();
         return allTheWords.toString();
     }
 
+    // Removes duplicate words, converts words to lower case, and returns them in a sorted list
     public List<String> OrganizeWords(String allTheWords) {
 
         allTheWords = allTheWords.toLowerCase(); // Convert words to lower case (readability / easier to find dupes)
