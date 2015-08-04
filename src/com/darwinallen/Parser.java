@@ -27,7 +27,7 @@ public class Parser {
     public List<String> OrganizeWords(String allTheWords) {
 
         allTheWords = allTheWords.toLowerCase(); // Convert words to lower case (readability / easier to find dupes)
-        String[] words = allTheWords.split("[^a-z]+"); // Split giant string with anything not part of common words
+        String[] words = allTheWords.split("[^a-z]+"); // Split giant string at any non-lowercase-alpha character
         Set<String> uniqueWords = new HashSet<String>(Arrays.asList(words)); // Throw words in a set to get rid of dupes
         List<String> sortedWords = new ArrayList<String>(uniqueWords); // Add the words to a list
         Collections.sort(sortedWords); // Sort the list
